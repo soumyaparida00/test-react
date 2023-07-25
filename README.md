@@ -20,7 +20,7 @@ Don't have a Hyperswitch account? [Sign up here!](https://app.hyperswitch.io/reg
 
 1. Add your keys :
     - Navigate to `src/App.jsx` and replace the placeholder `PUBLISHABLE_KEY` with your publishable key.
-    - Navigate to `./server.jsx` and replace the placeholder `API_KEY` with your API key.
+    - Navigate to `./server.js` and replace the placeholder `API_KEY` with your API key.
 
 2. Install the dependencies / build the server : 
 
