@@ -4,7 +4,7 @@ import { HyperElements } from "@juspay-tech/react-hyper-js";
 import './App.css';
 import CheckoutForm from "./CheckoutForm";
 
-const hyperPromise = loadHyper("PUBLISHABLE_KEY");
+const hyperPromise = loadHyper("HYPERSWITCH_PUBLISHABLE_KEY");
 
 function App() {
   const [options, setOptions] = useState(null);
@@ -17,7 +17,7 @@ function App() {
     }).then((res) => res.json())
       .then((data) => {
         setOptions({
-          clientSecret: data.clientSecret,
+          clientSecret: data.client_secret,
           appearance: {
             theme: "midnight"
           }
