@@ -16,4 +16,4 @@ spec:
         - name: react-app-container
           image: soumyaparida00/reactprod:latest
           ports:
-            - containerPort: 80
+            - containerPort: 3000
