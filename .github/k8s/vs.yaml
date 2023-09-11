@@ -1,4 +1,4 @@
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: react-app-service
@@ -6,7 +6,7 @@ spec:
   hosts:
   - reactprod.virtualtechbox.com
   gateways:
-  - istio-ingress/istio-ingressgateway
+  - istio-ingressgateway
   http:
   - name: "react-app-service"
     retries:
