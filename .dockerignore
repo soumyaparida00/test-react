@@ -3,3 +3,5 @@ npm-debug.log
 .DS_Store
 build
 .env
+.gitub
+k8s
