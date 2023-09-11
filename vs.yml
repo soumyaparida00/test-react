@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: reactapp-vs
+spec:
+  hosts:
+  - reactprod.virtualtechbox.com
+  gateways:
+  - istio-system/istio-ingressgateway
+  http:
+  - name: "react-app-service"
+    retries:
+      attempts: 5
+      perTryTimeout: 600s
+    route:
+    - destination:
+        host: react-app-service.reactprod.svc.cluster.local
+        port:
+          number: 80

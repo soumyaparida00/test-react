@@ -30,3 +30,19 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/reactprod:latest
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+      -
+        name: Deploy 
+        run: |
+
+          aws eks update-kubeconfig --name react-prod --region ap-south-1
+          kubectl config set-context --current --namespace=reactprod
+          kubectl apply -f /home/runner/work/kyc-service/kyc-service/.github/k8s/deployment.yaml
+          kubectl apply -f /home/runner/work/kyc-service/kyc-service/.github/k8s/service.yaml
+          kubectl apply -f /home/runner/work/kyc-service/kyc-service/.github/k8s/vs.yaml
