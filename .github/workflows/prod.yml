@@ -43,6 +43,6 @@ jobs:
 
           aws eks update-kubeconfig --name react-prod --region ap-south-1
           kubectl config set-context --current --namespace=reactprod
-          kubectl apply -f /home/runner/work/kyc-service/kyc-service/.github/k8s/deployment.yaml
-          kubectl apply -f /home/runner/work/kyc-service/kyc-service/.github/k8s/service.yaml
-          kubectl apply -f /home/runner/work/kyc-service/kyc-service/.github/k8s/vs.yaml
+          kubectl apply -f /home/runner/work/test-react/test-react/.github/k8s/deployment.yaml
+          kubectl apply -f /home/runner/work/test-react/test-react/.github/k8s/service.yaml
+          kubectl apply -f /home/runner/work/test-react/test-react/.github/k8s/vs.yaml
