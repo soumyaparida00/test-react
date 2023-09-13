@@ -6,7 +6,7 @@ spec:
   hosts:
   - reactprod.virtualtechbox.com
   gateways:
-  - istio-ingressgateway
+  - istio-system/istio-ingressgateway
   http:
   - name: "react-app-service"
     retries:
@@ -14,6 +14,6 @@ spec:
       perTryTimeout: 600s
     route:
     - destination:
-        host: react-app-service.reactprod.svc.cluster.local
+        host: react-app-service
         port:
           number: 80
