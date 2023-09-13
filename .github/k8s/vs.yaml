@@ -14,6 +14,6 @@ spec:
       perTryTimeout: 600s
     route:
     - destination:
-        host: react-app-service
+        host: react-app-service.reactprod.svc.cluster.local
         port:
           number: 80
