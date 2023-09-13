@@ -6,7 +6,7 @@ spec:
   hosts:
   - reactprod.virtualtechbox.com
   gateways:
-  - istio-system/istio-ingressgateway
+  - istio-ingress/istio-ingressgateway
   http:
   - name: "react-app-service"
     retries:
